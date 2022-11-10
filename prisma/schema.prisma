@@ -1,0 +1,31 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Groups {
+  id         String    @id @default(uuid())
+  name       String    @unique
+  created_at DateTime  @default(now())
+  players    Players[]
+
+  @@map("groups")
+}
+
+model Players {
+  id         String   @id @default(uuid())
+  name       String
+  team       String   @db.VarChar(1)
+  group_id   String
+  groups     Groups   @relation(fields: [group_id], onDelete: Cascade, references: [id])
+  created_at DateTime @default(now())
+
+  @@map("players")
+}
