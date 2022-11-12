@@ -7,6 +7,10 @@ interface IGroup {
 export class CreateGroupUseCase {
     async execute({ name }: IGroup) {
         //verificar se o grupo já existe
+        if (name === '') {
+            throw new Error("Empty field!")
+        }
+
         const groupExists = await prisma.groups.findFirst({
             where: { name }
         })

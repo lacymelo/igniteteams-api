@@ -10,7 +10,7 @@ export class CreatePlayerUseCase {
     async execute({ name, team, group_id }: IPlayer) {
         //verifica se existe um jogador com o mesmo nome
         const playerExists = await prisma.players.findFirst({
-            where: { name }
+            where: { name, group_id }
         })
 
         if (playerExists) {

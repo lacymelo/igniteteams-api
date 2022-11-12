@@ -53,6 +53,9 @@ Desenvolvimento de uma aplicação no backend com Nodejs para o projeto Ignite T
 
   🛠️ Biblioteca para tratar errors
   - ✨ yarn add express-async-errors
+
+  🛠️ Biblioteca para receber requisições da api
+  - ✨ yarn add cors
 ```
 
 ## 🛠️ Configurações Para Executar o servidor

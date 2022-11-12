@@ -1,8 +1,11 @@
 import express, { NextFunction, Request, Response } from "express"
+import cors from "cors"
 import "express-async-errors"
 import { routes } from "./routes"
 
 const app = express()
+
+app.use(cors())
 
 //para aceitar requisições do tipo json
 app.use(express.json())
@@ -24,4 +27,4 @@ app.use((err: Error, request: Request, response: Response, next: NextFunction) =
 })
 
 //inicializa o servidor
-app.listen(3333, () => console.log("Server is running!"))
+app.listen(3333, () => console.log("Server is running port 3333"))

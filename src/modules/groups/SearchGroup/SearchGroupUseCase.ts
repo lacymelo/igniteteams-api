@@ -18,6 +18,9 @@ export class SearchGroupUseCase {
                         id: true,
                         name: true,
                         team: true
+                    },
+                    orderBy: {
+                        name: 'asc'
                     }
                 }
             }
