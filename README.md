@@ -77,6 +77,19 @@ Desenvolvimento de uma aplicação no backend com Nodejs para o projeto Ignite T
   },
 ```
 
+## 🛠️ Configurações do Docker
+
+```cl
+  ## comando para criar a imagem
+  ✨ docker build -t igniteteams .
+
+  ## comando executar o container
+  ✨ docker run -p 3333:3333 igniteteams
+
+  ## comando para executar o docker-compose
+  ✨ docker-compose up
+```
+
 <br />
 
 <div align="center">
