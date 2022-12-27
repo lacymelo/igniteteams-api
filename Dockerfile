@@ -23,7 +23,6 @@ RUN npm install
 
 RUN npx prisma generate
 
-
 ## porta que está sendo rodada
 EXPOSE 3333
 
